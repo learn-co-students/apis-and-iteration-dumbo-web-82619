@@ -16,11 +16,19 @@ def get_character_movies_from_api(character_name)
 
   films = character_hash["films"]
 
-  binding.pry
   # collect those film API urls, make a web request to each URL to get the info
   #  for that film
   # return value of this method should be collection of info about each film.
   #  i.e. an array of hashes in which each hash reps a given film
+
+  films_hash =[]
+  films.each do |film|
+    films_hash <<  JSON.parse(RestClient.get(film))
+  end
+
+  films_hash
+
+  binding.pry
   # this collection will be the argument given to `print_movies`
   #  and that method will do some nice presentation stuff like puts out a list
   #  of movies by title. Have a play around with the puts with other info about a given film.
