@@ -26,7 +26,7 @@ def get_character_movies_from_api(character_name)
     films_hash <<  JSON.parse(RestClient.get(film))
   end
 
-  films_hash
+  print_movies(films_hash)
 
   binding.pry
   # this collection will be the argument given to `print_movies`
@@ -36,6 +36,11 @@ end
 
 def print_movies(films)
   # some iteration magic and puts out the movies in a nice list
+
+  puts "*" * 25
+  films.each_with_index do |film, index|
+    puts "#{index + 1}) #{film["title"]}"
+  end
 end
 
 def show_character_movies(character)
