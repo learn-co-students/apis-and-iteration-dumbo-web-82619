@@ -38,8 +38,14 @@ def print_movies(films)
   # some iteration magic and puts out the movies in a nice list
 
   puts "*" * 25
+  puts ""
   films.each_with_index do |film, index|
+    # puts "#{index + 1}) #{film["title"]}\n   #{film["opening_crawl"]}"
     puts "#{index + 1}) #{film["title"]}"
+    puts "   Director: #{film["director"]}" 
+    puts "   Producer: #{film["producer"]}" 
+    puts "   Release Date: #{film["release_date"]}" 
+    puts "👩‍💻👩‍🏭🌚\n\n"
   end
 end
 
