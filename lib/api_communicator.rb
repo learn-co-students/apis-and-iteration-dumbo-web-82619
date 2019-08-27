@@ -7,6 +7,23 @@ def get_character_movies_from_api(character_name)
   response_string = RestClient.get('http://www.swapi.co/api/people/')
   response_hash = JSON.parse(response_string)
 
+
+
+
+  # The below is the part that does not work
+
+  # puts response_hash
+  # (2...9).each do |page|
+  #   page_hash = JSON.parse(RestClient.get("http://www.swapi.co/api/people/?page=#{page}"))
+  #   puts page
+  #   response_hash["results"] << page_hash["results"]
+  #   # puts response_hash
+  # end
+  # puts response_hash["results"]
+
+
+
+
   # iterate over the response hash to find the collection of `films` for the given
   #   `character`
 
